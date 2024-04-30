@@ -1,0 +1,18 @@
+{
+  "files": {
+    "main.css": "/vlyd04/ChatBot.git/static/css/main.53911a14.css",
+    "main.js": "/vlyd04/ChatBot.git/static/js/main.a44a64f3.js",
+    "static/js/592.df84d5f0.chunk.js": "/vlyd04/ChatBot.git/static/js/592.df84d5f0.chunk.js",
+    "static/media/background.jpg": "/vlyd04/ChatBot.git/static/media/background.c31a8f3fe90861e9413c.jpg",
+    "static/media/icon1.png": "/vlyd04/ChatBot.git/static/media/icon1.2b59d30effe18d7c35cb.png",
+    "static/media/tra2.avif": "/vlyd04/ChatBot.git/static/media/tra2.796423e94a0a10fc3775.avif",
+    "index.html": "/vlyd04/ChatBot.git/index.html",
+    "main.53911a14.css.map": "/vlyd04/ChatBot.git/static/css/main.53911a14.css.map",
+    "main.a44a64f3.js.map": "/vlyd04/ChatBot.git/static/js/main.a44a64f3.js.map",
+    "592.df84d5f0.chunk.js.map": "/vlyd04/ChatBot.git/static/js/592.df84d5f0.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.53911a14.css",
+    "static/js/main.a44a64f3.js"
+  ]
+}
