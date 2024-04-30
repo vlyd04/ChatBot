@@ -1,49 +1,118 @@
-import React, { useState } from 'react';
-import axios from 'axios';
-import './App.css'
+
+// import React from 'react';
+// import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
+// import ChatWeatherComponent from './chatweather.js';
+// import LoginComponent from './login.js';
+// import SignUpComponent from './signup.js';
+// import './App.css';
+
+// function App() {
+//   return (
+//     <Router>
+//       <div className="App">
+//         <nav className="navbar">
+//           <ul className="navbar-nav">
+//             <li className="nav-item">
+//               <Link to="/" className="nav-link">
+//                 Home
+//               </Link>
+//             </li>
+//             <li className="nav-item">
+//               <Link to="/chatweather" className="nav-link">
+//                 ChatWeather
+//               </Link>
+//             </li>
+//             <li className="nav-item">
+//               <Link to="/login" className="nav-link">
+//                 Login
+//               </Link>
+//             </li>
+//             <li className="nav-item">
+//               <Link to="/signup" className="nav-link">
+//                 Sign Up
+//               </Link>
+//             </li>
+//           </ul>
+//         </nav>
+
+//         <Routes>
+//           <Route path="/" element={<Home />} />
+//           <Route path="/chatweather" element={<ChatWeatherComponent />} />
+//           <Route path="/login" element={<LoginComponent />} />
+//           <Route path="/signup" element={<SignUpComponent />} />
+//         </Routes>
+//       </div>
+//     </Router>
+//   );
+// }
+
+// const Home = () => {
+//   return (
+//     <div>
+//       <h2>Welcome to Travel Chatbot!</h2>
+//       <p>Explore the world with our chatbot providing travel and weather information.</p>
+//       </div>
+//   );
+// };
+
+// export default App;
+
+import React from 'react';
+import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
+import ChatWeatherComponent from './chatweather.js';
+import LoginComponent from './login.js';
+import SignUpComponent from './signup.js';
+import Home from './home.js';
+import './App.css';
+import icon from './assest/icon1.png'
 
 function App() {
-  const [messages, setMessages] = useState([]);
-  const [input, setInput] = useState('');
-
-  const sendMessage = async () => {
-    const newMessages = [...messages, { text: input, isUser: true }];
-    setMessages(newMessages);
-    
-    try {
-      const response = await axios.post('http://localhost:5000/chat', { message: input });
-      const botResponse = response.data.response;
-      const updatedMessages = [...newMessages, { text: botResponse, isUser: false }];
-      setMessages(updatedMessages);
-    } catch (error) {
-      console.error('Error sending message to backend:', error);
-    }
-
-    setInput('');
-  };
-
-  const handleInputChange = (e) => {
-    setInput(e.target.value);
-  };
-
   return (
-    <div className="App">
-      <h1>Chatbot</h1>
-      <div className="chat-container">
-        {messages.map((msg, index) => (
-          <div key={index} className={msg.isUser ? 'user-message' : 'bot-message'}>
-            {msg.text}
-          </div>
-        ))}
+    <Router>
+      <div className="App">
+        <nav className="navbar">
+        <div className='navbar-icon'>
+           <img src={icon} alt="Icon" className="navbar-icon" /> <h1>TravBot</h1>
+        </div>
+
+          <ul className="navbar-nav">
+            <li className="nav-item">
+              <Link to="/" className="nav-link">
+                Home
+              </Link>
+            </li>
+            <li className="nav-item">
+              <Link to="/chatweather" className="nav-link">
+                ChatWeather
+              </Link>
+            </li>
+            <li className="nav-item">
+              <Link to="/login" className="nav-link">
+                Login
+              </Link>
+            </li>
+            <li className="nav-item">
+              <Link to="/signup" className="nav-link">
+                Sign Up
+              </Link>
+            </li>
+          </ul>
+        </nav>
+
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/chatweather" element={<ChatWeatherComponent />} />
+          <Route path="/login" element={<LoginComponent />} />
+          <Route path="/signup" element={<SignUpComponent />} />
+        </Routes>
       </div>
-      <div className="input-container">
-        <input type="text" value={input} onChange={handleInputChange} />
-        <button onClick={sendMessage}>Send</button>
-      </div>
-    </div>
+    </Router>
   );
 }
-
 export default App;
+
+
+
+
 
 

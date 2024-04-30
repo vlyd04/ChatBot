@@ -1,0 +1,83 @@
+/* login.css */
+
+.login-container {
+    margin: 0;
+    display: flex;
+    justify-content: right;
+    align-items: center;
+    background-image: url("./assest/tra2.avif");
+    width: 700px;
+    margin-left: 250px;
+  }
+
+ 
+  
+  .login-form {
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+    width: 400px;
+    max-width: 100%;
+  }
+  
+  .form-group {
+    margin-bottom: 20px;
+  }
+  
+  label {
+    display: block;
+    margin-bottom: 5px;
+    color: #333;
+  }
+  
+  input {
+    width: 100%;
+    padding: 10px;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+  }
+  
+  .error-message {
+    color: #d9534f; /* Red color for error messages */
+    margin-top: 5px;
+    font-size: 14px;
+  }
+  
+  .btn-login {
+    width: 100%;
+    padding: 10px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  .btn-login:hover {
+    background-color: #0056b3;
+  }
+  
+  .signup-link {
+    margin-top: 20px;
+    text-align: center;
+    font-size: 14px;
+  }
+  
+  .eye-icon {
+    position: absolute;
+    top: 50%;
+    right: 10px;
+    transform: translateY(-50%);
+    cursor: pointer;
+  }
+  
+  .eye-icon i {
+    font-size: 18px;
+    color: #777;
+  }
+  
+  .eye-icon i:hover {
+    color: #333;
+  }
+  
