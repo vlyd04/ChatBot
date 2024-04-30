@@ -1,4 +1,5 @@
 from flask import Flask, jsonify, request
+import hashlib
 from flask_cors import CORS
 import random
 import json
@@ -7,14 +8,19 @@ import numpy as np
 import nltk
 from nltk.stem import WordNetLemmatizer
 from keras.models import load_model
+import requests
 
 app = Flask(__name__)
 CORS(app)
 
+
+# Load chatbot model and intents
 lemmatizer = WordNetLemmatizer()
 words = pickle.load(open('words.pkl', 'rb'))
 classes = pickle.load(open('classes.pkl', 'rb'))
 model = load_model('chatbot_model.h5')
+
+
 
 def load_intents(file_path):
     with open(file_path, 'r') as file:
@@ -65,12 +71,6 @@ def get_response(intents_list, intents_json):
             return response
     return "I'm sorry, I didn't understand that."
 
-CORS(app, resources={r"/chat": {"origins": "http://localhost:3000"}})
-
-@app.route('/', methods=['GET'])
-def home():
-    return "Flask Server is Running!"
-
 
 @app.route('/chat', methods=['POST'])
 def chat():
@@ -86,6 +86,11 @@ def chat():
     if message.lower() == 'quit':
         return jsonify({'response': 'Goodbye!'})
 
+    if 'weather in' in message.lower():
+        location = message.split('weather in ')[-1]
+        response_text = get_weather_data(location)
+        return jsonify({'response': response_text})
+
     ints = predict_class(message)
     print("Predicted Intents:", ints)  # Debug print to see the predicted intents
 
@@ -95,5 +100,61 @@ def chat():
     return jsonify({'response': res})
 
 
+def get_weather_data(city):
+    api_key = '30d4741c779ba94c470ca1f63045390a'
+    url = f"https://api.openweathermap.org/data/2.5/weather?q={city}&units=imperial&appid={api_key}"
+    response = requests.get(url)
+    
+    if response.status_code == 200:
+        weather_data = response.json()
+        weather = weather_data['weather'][0]['main']
+        temp = round(weather_data['main']['temp'])
+        return f"The weather in {city} is: {weather}, Temperature: {temp}ºF"
+    elif response.status_code == 404:
+        return "No City Found"
+    else:
+        return "Weather data not available at the moment."
+
+
+# db = mysql.connector.connect(
+#     host="localhost",
+#     user="root",
+#     password="Lydia@11",
+#     database="chatbot"
+# )
+# cursor = db.cursor()
+
+# @app.route('/', methods=['GET'])
+# def home():
+#     return "Flask Server is Running!"
+
+# @app.route('/api/signup', methods=['POST'])
+# def signup():
+#     data = request.json  # Get JSON data from the request
+#     email = data.get('email')
+#     password = data.get('password')
+
+#     # Hash the password for security
+#     hashed_password = hashlib.sha256(password.encode()).hexdigest()
+
+#     # Insert user into the database
+#     try:
+#         cursor.execute("INSERT INTO users (email, password_hash) VALUES (%s, %s)", (email, hashed_password))
+#         db.commit()
+#         response = {"message": "Sign-up successful"}
+#     except mysql.connector.Error as err:
+#         db.rollback()
+#         response = {"error": f"Error: {err}"}
+
+#     return jsonify(response)
+
+
+
+
 if __name__ == '__main__':
     app.run(debug=True)
+
+
+
+
+

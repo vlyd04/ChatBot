@@ -1,0 +1,118 @@
+{
+  "intents": [
+      {
+          "tag": "greeting",
+          "patterns": ["hi there", "how are you", "is anyone there?", "hey", "hola", "hello", "good day"],
+          "responses": ["Hello", "Good to see you again", "Hi there, how can I help?"],
+          "context": [""]
+      },
+      {
+          "tag": "goodbye",
+          "patterns": ["bye", "see you later", "goodbye", "nice chatting to you, bye", "till next time"],
+          "responses": ["See you!", "Have a nice day", "Bye! Come back again soon."],
+          "context": [""]
+      },
+      {
+          "tag": "thanks",
+          "patterns": ["thanks", "thank you", "that's helpful", "awesome, thanks", "thanks for helping me"],
+          "responses": ["My pleasure", "You're Welcome"],
+          "context": [""]
+      },
+      {
+          "tag": "inquiry",
+          "patterns": ["can you help me with something?", "i have a question", "need assistance"],
+          "responses": ["Of course! What do you need help with?", "Sure thing! Ask away, and I'll do my best to assist you.", "I'm here to help. What can I do for you?"],
+          "context": [""]
+      },
+      {
+          "tag": "compliment",
+          "patterns": ["you're doing a great job", "i like your service", "impressive work"],
+          "responses": ["Thank you! Your kind words mean a lot.", "I appreciate the compliment! Is there anything specific you'd like assistance with?", "Glad to hear that! If you have any questions or requests, feel free to let me know."],
+          "context": [""]
+      },
+      {
+          "tag": "error handling",
+          "patterns": ["i'm having trouble", "something went wrong", "error occurred"],
+          "responses": ["I'm sorry to hear that. Can you provide more details about the issue so I can assist you better?", "I apologize for the inconvenience. Let's work together to resolve the issue.", "I'll do my best to help. What error message or problem are you experiencing?"],
+          "context": [""]
+      },
+      {
+          "tag": "recommendations",
+          "patterns": ["can you suggest a book?", "i need a movie recommendation", "any recommendations for a good restaurant?"],
+          "responses": ["Sure! What genre or type are you interested in?", "Absolutely! I can recommend something based on your preferences. What are you in the mood for?", "Certainly! Do you have any specific preferences or requirements for the recommendation?"],
+          "context": [""]
+      },
+      {
+          "tag": "colosseum",
+          "patterns": ["tell me about colosseum", "what's special about colosseum?", "colosseum information"],
+          "responses": ["The Colosseum, located in Rome, Italy, is an ancient amphitheater with a rich history. It once hosted gladiator contests and public spectacles, making it an iconic symbol of Imperial Rome. The architecture is impressive, and it holds significant historical importance."],
+          "context": [""]
+      },
+      {
+          "tag": "mount fuji",
+          "patterns": ["what can you tell me about mount fuji?", "mount fuji details", "share information on mount fuji"],
+          "responses": ["Mount Fuji, an active stratovolcano, is Japan's highest peak and a symbol of the country. Tourists visit the Fuji Five Lakes region to witness stunning views, especially during the cherry blossom season."],
+          "context": [""]
+      },
+      {
+          "tag": "eiffel tower",
+          "patterns": ["eiffel tower details", "tell me about the eiffel tower", "what's special about the eiffel tower?"],
+          "responses": ["The Eiffel Tower in Paris, France, is a globally recognized landmark. Constructed in the late 19th century, it offers breathtaking views of Paris and has become a symbol of romance and elegance."],
+          "context": [""]
+      },
+      {
+          "tag": "northern light",
+          "patterns": ["northern lights information", "tell me about the northern lights", "what's special about the aurora borealis?"],
+          "responses": ["The Northern Lights, or Aurora Borealis, are natural light displays in the Arctic and Antarctic regions. Norway, with its clear skies, is a fantastic location to witness this mesmerizing celestial phenomenon."],
+          "context": [""]
+      },
+      {
+          "tag": "sagrada familia",
+          "patterns": ["sagrada familia details", "tell me about sagrada familia", "what's special about sagrada familia?"],
+          "responses": ["Sagrada Familia in Barcelona, Spain, is an iconic basilica designed by architect Antoni Gaudí. Known for its unique architecture, intricate details, and ongoing construction, it is a UNESCO World Heritage site."],
+          "context": [""]
+      },
+      {
+          "tag": "bali",
+          "patterns": ["bali details", "tell me about bali", "what's special about bali?"],
+          "responses": ["Bali, Indonesia, is a tropical paradise known for its stunning beaches, vibrant cultural scene, and lush landscapes. It attracts visitors with its temples, rice terraces, and diverse marine life."],
+          "context": [""]
+      },
+      {
+          "tag": "burj khalifa",
+          "patterns": ["burj khalifa details", "tell me about burj khalifa", "what's special about burj khalifa?"],
+          "responses": ["Burj Khalifa in Dubai, United Arab Emirates, is the world's tallest building. Offering panoramic views of the city, it is a symbol of modern architecture and a key attraction in Dubai's skyline."],
+          "context": [""]
+      },
+      {
+          "tag": "jeju island",
+          "patterns": ["jeju island details", "tell me about jeju island", "what's special about jeju island?"],
+          "responses": ["Jeju Island in South Korea is a volcanic island known for its unique landscapes, waterfalls, and lava tubes. It's a UNESCO World Heritage site and a popular destination for nature lovers and hikers."],
+          "context": [""]
+      },
+      {
+          "tag": "taj mahal",
+          "patterns": ["tell me about taj mahal", "what's special about taj mahal?", "taj mahal information"],
+          "responses": ["The Taj Mahal in India is an iconic symbol of love and a UNESCO World Heritage site. Built by Emperor Shah Jahan in memory of his wife Mumtaz Mahal, it is renowned for its white marble architecture and intricate detailing."],
+          "context": [""]
+      },
+      {
+          "tag": "jaipur",
+          "patterns": ["tell me about jaipur", "what's special about jaipur?", "jaipur travel information"],
+          "responses": ["Jaipur, known as the Pink City, is the capital of Rajasthan, India. Famous for its vibrant architecture, including the Hawa Mahal and City Palace, Jaipur offers a rich cultural experience and is a gateway to Rajasthan's royal heritage."],
+          "context": [""]
+      },
+      {
+          "tag": "mysore palace",
+          "patterns": ["tell me about mysore palace", "what's special about mysore palace?", "mysore palace information"],
+          "responses": ["Mysore Palace in Karnataka, India, is a grand royal residence known for its Indo-Saracenic architecture. The palace is a symbol of Mysore's royal heritage and is illuminated with thousands of lights during the Dussehra festival."],
+          "context": [""]
+      },
+      {
+          "tag": "nicobar islands",
+          "patterns": ["tell me about andaman and nicobar islands", "what's special about andaman and nicobar islands?", "andaman and nicobar islands information"],
+          "responses": ["The Andaman and Nicobar Islands in the Bay of Bengal, India, are known for their pristine beaches, coral reefs, and marine life. Popular activities include snorkeling, scuba diving, and exploring the rich biodiversity of the islands."],
+          "context": [""]
+      }
+    ]
+}
